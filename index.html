@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AryaTask4</title>
+        <style type="text/css">
+            *{
+                text-decoration: none;
+            }
+            body{
+                background-color: bisque;
+            }
+            .navbar{
+                background-color: rgb(213, 180, 139);
+                font-family: Algerian;/*font fix karega*/
+                padding-right: 15px;  /*spaces dega*/
+                padding-left:15px;
+            }
+            .navdiv{
+                display: flex;  /* sab alag alag elements ko ek line me rakhne allow karega like navigation and search bar aur logo */
+                align-items: center;
+                justify-content: space-between; /*proper spacing dega sab texts buttons ke bich me*/
+            } 
+            .logo a{
+               font-size: 35px;
+               color:white; 
+            }
+            li{
+                list-style: none; 
+                display: inline-block;  /* Single line me leke aayega sabko like sab hone sign in ek ke niche ek aayega */
+            }
+            li a{
+                color: white;
+                font-size: 18px;
+                margin-right: 25px;
+            }
+            button{
+                background: transparent;
+                color: white;
+                margin-left: 10px;
+                border-radius: 10px;
+                width: 90px;
+            }
+            button a{
+                color: white;
+                font-weight: bold;
+                font-size: 15px;
+                text-align: center;
+            }
+
+
+
+            #slider {
+                overflow: hidden; /* isko nai dala toh next picture ka thoda part visible rahega */
+                height: 13cm;
+                margin-bottom: 5cm;
+            }
+            #slider figure {
+                position: relative; /* iske bina slide hi nahi hoga images */
+                width: 500%;
+                margin: 0; /* margin and left ekdum left se chalu karega images without spaces left */
+                left: 0;
+                animation: 20s slider infinite; /* slider continuos rakhega and for 20sec */
+            }
+            #slider figure img {
+                float: left;
+                width: 20%;
+                height: 13cm;
+            }
+
+            @keyframes slider {  /* left iske liye ki vo 1st 2nd photo dikhaega and height kitna page cover karega */
+                0% {
+                    left: 0%;
+                    height: 50%;
+                }
+                20% {
+                    left: 0%;
+                    height: 50%;
+                }
+                25% {
+                    left: -100%;
+                    height: 50%;
+                }
+                45% {
+                    left: -100%;
+                    height: 50%;
+                }
+                50% {
+                    left: -200%;
+                    height: 50%;
+                }
+                70% {
+                    left: -200%;
+                    height: 50%;
+                }
+                75% {
+                    left: -300%;
+                    height: 50%;
+                }
+                95% {
+                    left: -300%;
+                    height: 50%;
+                }
+                100% {
+                    left: -400%;
+                    height: 50%;
+                }
+            }
+
+            .form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container{
+                background-color: rgb(246, 207, 159);
+                padding: 15px;
+                border-radius: 10px;
+            }
+            .registration{
+                font-family: algerain;
+                font-size: 30px;
+                text-align: center;
+                border-bottom: 3px dashed rgb(245, 197, 138); /* Dashed line dega */
+            }
+            form .container2{
+                display: flex;
+                flex-wrap: wrap; /* iske bina 2 columns me pura form nai aayega, ek ke baad ek line me aayega like name ke niche name likhne ka jagah and so on.. */
+            }
+            form .container2 .inputbox{
+                width: calc(100%/2 - 20px); /* iska matlab 2 columns me divide kiya aur margin ka 20px chod diya */
+                margin: 10px;
+            }
+            form .container2 .inputbox input {
+                height: 45px;
+                width: 100%;
+                border-radius: 5px;
+            }
+           .lastinput {
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            background-color: rgba(18, 18, 18, 0.311);
+            color: white;
+            border: none;
+            height: 1cm;
+            border-radius: 5px;
+           }
+            
+
+
+           /* .inner-footer {
+                margin:0;
+                padding: 0;
+                background-color:rgb(222, 171, 171);
+            }
+            .social-links {
+                display:flex;
+            }
+            .social-links ul {
+                padding: 10px;
+                display: flex;
+                width: 300px;
+                height: 30px;
+                margin: auto;
+            }
+            .social-items{ 
+                list-style: none;
+                align-items: center;
+            }
+            .social-items { 
+                padding:10px 20px;
+                font-size: 35px;
+                color: rgb(101, 101, 192);
+                align-items: center;
+            }
+            .social-items a:hover{
+                color: rgb(54, 160, 142);
+            }
+            .quick-links{
+                display: flex;
+                width: 900px;
+                height: 70px;
+                margin: auto;
+                transition: all .25s;
+                align-items: center;
+            }
+            .quick-links ul{
+                display: flex;
+                align-items: center;
+                
+                
+            }
+            .quick-items{
+                list-style: none;
+                
+            }
+            .quick-items a{
+                text-decoration: none;
+                padding:0px 15px;
+                font-size: 18px;
+                color:rgb(35, 35, 95);
+                transition: all .25s;
+            }
+            .quick-items a-hover{
+                color:pink;
+            } */ 
+            
+            
+            .footer{
+                width:100%;
+                padding: 50px 3%;
+                background-color: rgb(171, 140, 103);
+                color: white;
+                display: flex;
+                margin-top: 5cm;
+            }
+            .footer div{
+                text-align: center;
+            }
+            .col2{
+                flex-grow: 0.9;
+                vertical-align: middle;
+            }
+            footer div h3{
+                font-weight: 300;
+                margin-bottom: 30px;
+                letter-spacing : 1px;
+            }
+            .col1 a{
+                display: block;
+                text-decoration: none; /* removes the underline from links*/
+                color: white;
+                margin-bottom: 10px;
+            }
+            /*form input{
+                width: 400px;
+                height: 45px;
+                border-radius: 4px;
+                text-emphasis: center;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                outline:none;
+                border:none;
+            }
+            form button{
+                background: transperent;
+                border: 2px solid white;
+                color: white;
+                border-radius: 30px;
+                padding: 10px 100px;
+                font-size: 15px;
+                cursor: pointer;
+                text-align: center;
+            }*/
+
+
+        </style>
+    </head>
+
+    <body> 
+
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="#">EXOTIC PETS</a></div>
+                <ul>
+                    <li><a href="#title1">Home</a></li>
+                    <li><a href="#title2">About</a></li>
+                    <li><a href="#title3">Form</a></li>
+                    <li><a href="#title4">Contact</a></li>
+                    <button><a href="#title">SignIn</a></button>
+                    <button><a href="login.html">LogIn</a></button>
+                </ul>
+                <section id="title1"></section>
+                <div class="search">
+                    <form>
+                        <input type="text" placeholder="Type here...">
+                        <button type="submit"><a href="#">Search</a></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+       
+       
+
+
+        <div id="slider"> 
+            <figure>
+                <img src="./f1.png">
+                <img src="./f2.webp">
+                <img src="./f3.jpg">
+                <img src="./f4.jpg">
+                <img src="./f1.png">
+            </figure>
+        </div>
+
+        <section id="title2"></section>
+
+<h1 style="background-color: #DCA47C; inline-size: 14.5%;border-radius: 10%;"><b>ABOUT US</b></h1>
+<p style="background-color: #c7dbce">Animals are a precious part of our natural world and play a vital role in maintaining the ecological balance of our planet. However, many animal species are under threat due to human activities like habitat destruction, poaching, and pollution. Saving animals is crucial for several reasons, including ecological balance, pollination and pest control, biodiversity, economic benefits, and our moral obligation as the dominant species on Earth.</p>
+<p style="background-color: #DCA47C;font-size: larger;inline-size: 13.5%;border-radius: 10%;"><b>Ecological Balance</b></p>
+<p style="background-color: #c7dbce">Animals are an integral part of the food chain and help regulate ecosystems. The extinction of even one species can disrupt the entire food web with disastrous consequences. For example, the decline of sharks in some ocean ecosystems has led to an explosion in the population of their prey, which has decimated kelp forests and other marine habitats. Predators like wolves and big cats help control the population of their prey, which prevents overgrazing and keeps ecosystems healthy.</p>
+<p style="background-color: #DCA47C; font-size: larger;inline-size: 20%;border-radius: 10%;"><b>Pollination and Pest Control</b></p>
+<p style="background-color: #c7dbce">Many animals like bees, butterflies, and birds are pollinators that are essential for plant reproduction and crop growth. In fact, over 75% of flowering plants rely on animal pollinators. Bees alone pollinate over $15 billion worth of crops in the U.S. each year. Other animals like birds and insects help control pests that damage crops, reducing the need for harmful pesticides. For example, bats eat millions of insects that are agricultural pests. Protecting pollinators and pest-controlling animals is vital for food security.</p>
+<p style="background-color: #DCA47C; font-size: larger;inline-size: 13.5%;border-radius: 10%;"><b>Biodiversity</b></p>
+<p style="background-color: #c7dbce">Protecting animals helps preserve biodiversity, which is the variety of living species on Earth. Biodiversity is important for maintaining healthy, resilient ecosystems. More diverse ecosystems are better able to adapt to changes and recover from disturbances. Biodiversity also provides us with a vast array of genetic resources that could be used to develop new medicines, crops, and other products. However, biodiversity is under threat, with over 1 million species at risk of extinction in the coming decades.</p>
+<p style="background-color: #DCA47C; font-size: larger;inline-size: 13.5%;border-radius: 10%;"><b>Economic Benefits</b></p>
+<p style="background-color: #c7dbce">Wildlife tourism generates billions in revenue for many countries. In 2018, wildlife tourism accounted for 21.8% of total tourism revenue in Africa. Animals also provide us with useful products like milk, meat, honey, and leather. However, the economic value of animals goes far beyond what we can directly consume or sell. Healthy ecosystems provide trillions of dollars worth of "ecosystem services" like water filtration, flood control, and climate regulation. Protecting animals helps preserve these vital services.</p>
+<p style="background-color: #DCA47C; font-size: larger;inline-size: 12.5%;border-radius: 10%;"><b>Moral Obligation</b></p>
+<p style="background-color: #c7dbce">As the dominant species on Earth, humans have a moral responsibility to be good stewards of the environment and protect vulnerable animals. Many animals are intelligent, sentient beings capable of experiencing pain and suffering. Allowing species to go extinct due to our own actions is unethical. We are the only species with the ability to understand the consequences of our actions and the power to prevent animal extinctions. Saving animals is the right thing to do.</p>
+<p style="background-color: #DCA47C; font-size: larger;inline-size: 8.5%;border-radius: 10%;"><b>Conclusion</b></p>
+<p style="background-color: #c7dbce">If we don't take urgent action to save animals, many species may go extinct in our lifetimes. It's our duty to preserve the incredible diversity of life on our planet for future generations. By protecting habitats, cracking down on poaching, and raising awareness about conservation, we can ensure that animals continue to thrive in the wild for centuries to come. Saving animals is not only good for the environment, but it's also the moral and economically wise thing to do. We must act now to protect our planet's precious wildlife.
+<br><b>Help us save the animals by just dedicating only 60 minutes of your weekends.</b><br>
+(submit the form to join our organization)
+</p>
+
+        <section id="title3"></section>
+        <div class="form">
+        <div class="container">
+            <div class="registration">Registration Form</div>
+            <form>
+                <div class="container2">
+                    <div class="inputbox">
+                        <span class="inputtext">First Name</span>
+                        <input type="text" placeholder="Enter your First Name">
+                    </div>
+                    <div class="inputbox">
+                        <span class="inputtext">Last Name</span>
+                        <input type="text" placeholder="Enter your Last name">
+                    </div>
+                    <div class="inputbox">
+                        <span class="inputtext">Email Id</span>
+                        <input type="text" placeholder="Enter your Email">
+                    </div>
+                    <div class="inputbox">
+                        <span class="inputtext">Phone Number</span>
+                        <input type="text" placeholder="Enter your Phone Number">
+                    </div>
+                    <div class="inputbox">
+                        <span class="inputtext">Age</span>
+                        <input type="text" placeholder="Enter your age">
+                    </div>
+                    <div class="inputbox">
+                        <span class="inputtext">Address</span>
+                        <input type="text" placeholder="Enter you Address">
+                    </div>
+                    <input class="lastinput" type="submit" value="Register your Data">
+                </div>
+            </form>
+           
+        </div>
+
+
+
+
+        <p style="background-color: antiquewhite;">
+            <br><b<br><br><br><br>.</p>
+        </div> 
+        <div class="footer">
+            <section id="title4"></section>
+            <div class="col1">
+                <h2>USEFUL LINKS</h2>
+                <a href="#title2">About</a>
+                <a href="#title3">Services</a>
+                <a href="#title4">Contact</a>
+            </div>
+            <div class="col2">
+                <h2>SUGGESTIONS</h2>
+                <form>
+                    <input type="text" placholder="suggestions for us">
+                    <br><br>
+                    <button type="submit">FOLLOW US</button>
+                    </form>
+                </form>
+            </div>
+            <div class="col3">
+                <h2>CONTACT</h2>
+                <p> +91 123-456-7890 <br>abc@gmail.com <br> Maharashtra, India</p>
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbUlEQVR4nO2Wu0rEQBhGT6OCnY2K91oLC7HTB7DwxmKtFlYa9XVcUXvRzltpYal9XPAFvIGbRZd1oxKYhTEkf/5NsrDFfjDNMGdO5pKZgU7aMGOAA9wALlAxxTV1O8BonsJh4ACoA78JxQdOgYms0hXAUwjDpQwspZXumRE0K7VHv5tmpH4Tkg/gK0auHvmIcnqfgU2gz2J7gLuIaR/SiI8U0k9gKoa/jWh/qPllNLu3GOK6gGlgBniIaF83MxkbR7mmaxbTC5QUzLYkvlaK5yxmQclcSuJHZSezFrOuZFxJ7KUQbygZTxJXBHAeXeLWuyxBTxnF3cB3DF+SwKuM4kmBv5DA/YTNcW9KIGhk0aqXNqcjiceBWgs2V01zV5+0QFxEkeDYfM9R/JZ0XNopAD85iIM+lrXSRraEO1kj9k0fqVIAXlOIX4BVMmYQOAaqCnHV3OcDWaXhDwjeUOehR0DwTDozb7T+f0Qn7ZA/M7pkIR8cDCkAAAAASUVORK5CYII="></a></li>
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABc0lEQVR4nO3UMUhXURQG8J+FRqU4GLY4NrS2aS6BiW1NTrmIg4S0t4lC4NRQbm4FDg2Fk7qGlYM0iIPCv1AKpEgUQYPS/nHhBI/H//mem4Ef3OGd+53zne+8ey/n+B9xBZOo4Rc+xfdltOA+xouSn+FSSfEPqDdYSWgvhLsaJTfhN+bQViAwGcU20YeruIutiP/EDMaKOtwJYuqit8F+LfZT8Sz6M05eoLlI4HnO9nsM40bM+CjiadZZtET8T0yiEK14WzDjemY1ykvxfSWYCPvvIuEb3sTMD04QuBnxjTKBl7lOd8osB0aDP1tGTFaXciLdFQT+OX5QgesCRjLn/XUJ/17wtuOelOIVPuMw4+JOAfcavgbnkYrowEJuTFvozPGuYzX2F3HRKXELUziOIvMRTz99MEaS4mvhpBKaw0EPnmA3ivzAQzzGesZZ6ry9avEBfKxwyeoxsqE4EKfGbTzFCr7Hk/wFy5iOdyf/VJzjDOMvo/l8WwkAKO4AAAAASUVORK5CYII="></a></li>
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5klEQVR4nO1TQQ6CQAycbwBPEr6jeJb4KyDR+CCFi6c1TUqCa7ct4JFJetgw7XRnFmDHSlQAegAjgGAUcToApXf41TE0JKrxbE7EN4AjgNyxEHFO3BOsm/RMogYvHgDuAGrubTXywKRcyWSMPKfhN+6h3pcmMHnpzaRx9KuESshE83yxQK9kInm+WGDgcyZwM8Hz1QK5wC3423OLQMdnsiPG+R8WlbOQa75JwcOnkA9bBMBPMfVML/iGKZDyvGQrBq422nyeifqjaZ5bkDL5geS5BS0TEZrnwag4kyTmngejUpnsgAsfOPmncZue63wAAAAASUVORK5CYII="></a></li>
+                <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA4ElEQVR4nO2WvQ4BQRSFvxU6P4VG5wU0KioqiQ3eQu81VJ7DA+h0RFTeQLUrohSFiLArktlkTGOLmVk/e5JT3HPvzZfMTDGQ6h/VA3ZAqMk+4MYB+xqhkb044NCQ30pdOAJL4GwTfAKqIq8DN1vgtdLzbIEvQEPkAyCwecd3YJ/E4xoLT0R9kLIZsAVGQB8YAitdYEfkeVFvpNkmUFL2M8DcNDhSmVd1TIMdYCHyqZRXTINr0twVyIo8ZxrcUmYLUi8wCW4rs8UUzDcedajJnwv2k/r6uJrhT2g3DjjVb+kBRsV7Hz5Qag0AAAAASUVORK5CYII="></a>
+            </div>
+
+        </div>
+
+
+
+
+    </body>
+</html>
